@@ -1,0 +1,33 @@
+\documentclass{report}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{notoccite}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[
+    backend=biber,
+    style=numeric,
+    sorting=none,
+    sortcites=true,
+    date=comp,
+    urldate=long
+]{biblatex}
+\addbibresource{References.bib}
+\begin{document}
+
+\title{EPQ: NoteTaking}
+\author{Henry Field}
+\date{\today}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\chapter{Documented Design}
+\chapter{Technical Solution}
+\chapter{Testing}
+\chapter{Evaluation}
+\chapter{References}
+\printbibliography[heading=bibintoc, title={Bibliography}]
+\end{document}
