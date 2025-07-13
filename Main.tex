@@ -4,7 +4,41 @@
 \usepackage{xcolor}
 \usepackage{float}
 \usepackage{notoccite}
-\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage[a4paper, margin=1in, headheight=16pt]{geometry}
+
+
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{lmodern}
+
+\usepackage[table]{xcolor}
+
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+
+% Header/Footer setup
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}  % clear all headers and footers
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+% Define a command to set up = header/footer 
+\newcommand{\myfancysetup}{
+  \fancyhead[L]{Henry Field - EPQ Report}
+  \fancyhead[R]{\rightmark}
+  \fancyfoot[L]{Candidate Number: \textbf{0000}\\Center Number: \textbf{0000}}
+  \fancyfoot[R]{Page \thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+% Apply the setup to both 'fancy' and 'plain' page styles
+\myfancysetup
+\fancypagestyle{plain}{\myfancysetup}
+
+\usepackage{parskip}
 \usepackage[
     backend=biber,
     style=numeric,
@@ -24,10 +58,14 @@
 \tableofcontents
 \newpage
 
-\chapter{Documented Design}
-\chapter{Technical Solution}
-\chapter{Testing}
-\chapter{Evaluation}
+
+
+% To include more pages, repeat the \includegraphics line with different page numbers.
+\include{PPR/PPR}
+\include{ProjectChoice/ProjectChoice}
+\include{Planning/Planning}
+\include{Research/Research}
+\include{Diary/Diary}
 \chapter{References}
 \printbibliography[heading=bibintoc, title={Bibliography}]
 \end{document}

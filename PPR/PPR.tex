@@ -1,0 +1,23 @@
+\chapter{PPR}
+Please find my PPR Document in the following pages:
+
+
+% Define a custom page command to add the DRAFT stamp to every page
+\newcommand{\draftstamp}{
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[rotate=30,scale=12,text opacity=0.1] at (current page.center) {\textbf{DRAFT}};
+    \end{tikzpicture}
+}
+
+\includepdf[
+    pages=-,
+    fitpaper=false,
+    scale=0.9,
+    pagecommand={
+        \thispagestyle{fancy}
+        \draftstamp
+    }
+]{PPR/PPR.pdf}
+
+% normal pdf printout
+% \includepdf[pages=-, fitpaper=false, scale=0.9, pagecommand={\thispagestyle{fancy}}]{PPR/PPR.pdf}
