@@ -1,5 +1,11 @@
 \documentclass{report}
+
+
+% for referencing, second lines make nomral \ref act like  \autoref
 \usepackage{hyperref}
+\let\ref\autoref
+
+
 \usepackage{tikz}
 \usepackage{xcolor}
 \usepackage{float}
@@ -7,6 +13,8 @@
 \usepackage{pdfpages}
 \usepackage[a4paper, margin=1in, headheight=16pt]{geometry}
 
+% for ticks
+\usepackage{pifont}
 
 \usepackage{longtable}
 \usepackage{array}
@@ -18,6 +26,9 @@
 
 \usepackage{tabularx}
 \usepackage{booktabs}
+
+% nicely displays code
+\usepackage{minted}
 
 
 % Header/Footer setup
@@ -64,8 +75,8 @@
 \include{PPR/PPR}
 \include{ProjectChoice/ProjectChoice}
 \include{Planning/Planning}
+
 \include{Research/Research}
 \include{Diary/Diary}
-\chapter{References}
 \printbibliography[heading=bibintoc, title={Bibliography}]
 \end{document}
