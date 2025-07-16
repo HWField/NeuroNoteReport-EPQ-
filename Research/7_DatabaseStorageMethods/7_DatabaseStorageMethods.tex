@@ -1,0 +1,75 @@
+\section{Database Storage Methods}
+\label{research:DatabaseStorageMethods}
+A crucial aspect of a notetaking app is the ability for the app to store information itself, without this it would have no purpose. My app is designed to be accessed in the browser of a device (eliminating the need for separate, platform specific apps to be created), therefore all user data must be stored on the server, ready for access from any location
+
+
+From my prior research of note taking methods, I produced \nameref{research:DataTagging} for note storage under which notes contain a variety of tags, which themselves can contain tags. This system allows for easy linking between elements. 
+
+I now needed to explore how this data could be feasibly stored. Traditional notetaking software stores pages, and parents these pages to chapters, sections and books. This enables pages to be organised under a relevant group but I wanted more. From the recording of this project I have already found the inability to link to specific phrases of text, or diagrams to be frustrating as I'm left with a vague page link at best requiring other written instructions to find the relevant item. This is a complex and time heavy way of achieving these links, Instead I want to store much smaller chunks of data as what I call "components". A component can be an image, a text field, a drawing canvas or anything else. These "components" then link together to form a "memory" traditionally referred to as a page. The flexibility in this system comes from the fact that multiple memories can contain the same components, when a component is edited within one memory this is instantly updated on all other instances of thata component. As well as inserting components within notes, links can be made from one component to exact passages of text or drawing strokes within another component for easy referencing.
+
+Underlying this mixture of components and memories is my tag system. Unlike other software I don't use folders to order memories. Instead every memory and component can be assigned tags. These tags inform their properties (for example text size, or colour) and their relationship to other objects. For example: 
+
+I have a text component which explains how Pythagoras theorem works, and a sketch component showing the theorem in an applied form. These 2 components aren't designed to be independently viewed but instead make up the contents of my Pythagoras theorem memory. This memory can then be given the tag "trig and examples", this trig and examples tag is a child of maths theory, which is a child of maths, which is a child of subjects, which is a child of school. As such any search of those terms would reveal this note
+
+This is my first draft of a database layout that would support my note-taking system
+
+\textbf{Components Table:}
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+    \toprule
+    \textbf{Field}         & \textbf{Content and Example} \\
+    \midrule
+    ComponentId          & Identifies the component — e.g., 1 \\
+    Type                  & Type of component — e.g., Text \\
+    Content               & The information itself — e.g., "Pythagoras theorem uses xyz…" \\
+    Created at            & Time created — e.g., 20/10/2015 13:45 \\
+    Last modified         & Time last updated — e.g., 21/10/2016 13:42 \\
+    \bottomrule
+\end{tabularx}
+
+
+\textbf{Memories Table:}
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+    \toprule
+    \textbf{Field}     & \textbf{Content and Example} \\
+    \midrule
+    MemoryId         & Identifies the memory — e.g., 1 \\
+    Description        & Description — e.g., "This memory explains Pythagoras" \\
+    Tags               & Tags the memory holds — e.g., "trig and examples" \\
+    Links              & Links to other notes — e.g., Note1 \\
+    \bottomrule
+\end{tabularx}
+
+\textbf{Memory Component Links Table}
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+    \toprule
+    \textbf{Field}     & \textbf{Content and Example} \\
+    \midrule
+    MemoryId         & Identifies the memory — e.g., 1 \\
+    ComponentId      & Identifies the component — e.g., 1 \\
+    XCoordinate      & Locates the component within the memory — e.g., 192 \\
+    YCoordinate      & Locates the component within the memory — e.g., 168 \\
+    Tag                & Stores any modifier tags such as size and font — e.g., Red, 16 \\
+    \bottomrule
+\end{tabularx}
+
+\textbf{Tags Table}
+
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+    \toprule
+    \textbf{Field}     & \textbf{Content and Example} \\
+    \midrule
+    Tag id             & Identifies the tag — e.g., 1 \\
+    Name               & Names the tag — e.g., Maths \\
+    Parent tag         & Maps the tag to a parent tag for further sorting — e.g., Tag1 \\
+    \bottomrule
+\end{tabularx}
+
+This table put in code form looks like:
+
+\begin{center}
+\inputminted[linenos, tabsize=2, breaklines]{python}{research/7_DatabaseStorageMethods/media/sqlCode.sql}
+\end{center}

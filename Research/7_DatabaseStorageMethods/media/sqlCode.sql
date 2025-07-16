@@ -1,0 +1,26 @@
+CREATE TABLE Notes (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255),
+    content TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Tags (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    parent_tag_id INT REFERENCES Tags(id) ON DELETE SET NULL
+);
+
+CREATE TABLE NoteTags (
+    id SERIAL PRIMARY KEY,
+    note_id INT REFERENCES Notes(id) ON DELETE CASCADE,
+    tag_id INT REFERENCES Tags(id) ON DELETE CASCADE
+);
+
+CREATE TABLE DirectLinks (
+    id SERIAL PRIMARY KEY,
+    note_id_1 INT REFERENCES Notes(id) ON DELETE CASCADE,
+    note_id_2 INT REFERENCES Notes(id) ON DELETE CASCADE,
+    description VARCHAR(255)
+);

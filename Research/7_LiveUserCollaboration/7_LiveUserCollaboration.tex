@@ -1,0 +1,20 @@
+\section{Live User Collaboration}
+\label{research:LiveUserCollaboration}
+
+A core foundation of my project is enabling seamless sharing of notes between multiple users. Achieving this requires two key backend capabilities:
+1.	The ability to store data reliably.
+2.	The ability to transmit up-to-date information to users in real time.
+
+While I had already researched data storage earlier, real-time communication was an area I hadn't yet explored. To better understand it, I began with some initial research.
+
+A quick search introduced me to two common approaches to client-server communication:
+•	Polling via POST requests: where the client periodically asks the server for updates.
+•	Persistent connections: where the server pushes updates to the client in real time via a direct connection.
+
+The polling method initially seemed more straightforward to implement and relied on Python concepts I was already familiar with, so I began by experimenting with that.
+
+Requests Approach:
+This technique involves the client (user's browser) sending a request to the server whenever it needs new or updated information-similar to how a search query is sent to Google. While simple to set up, this approach can be inefficient, as it requires the client to keep asking the server for changes, even when there are none.
+
+Next Steps:
+To improve responsiveness and scalability, I've decided to use Socket.IO \cite{IntroductionSocketIO2025} to establish a persistent, real-time connection between the client and the Flask server. This will allow updates to be pushed instantly to all connected users as changes occur, rather than relying on periodic polling.
