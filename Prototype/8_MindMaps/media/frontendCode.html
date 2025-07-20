@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second Brain Graph</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.21.0/cytoscape.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="https://unpkg.com/layout-base/layout-base.js"></script>
+    <script src="https://unpkg.com/cose-base/cose-base.js"></script>
+    <script src="https://unpkg.com/cytoscape-fcose/cytoscape-fcose.js"></script>
+    
+    <style>
+      body {
+        background-color: #525252; /* Dark grey background */
+        color: #fff; /* Optional: Set text color to white for better contrast */
+        height: 100%;
+      }
+      #cy {
+        width: 60%;
+        height: 80vh; /* Adjust the height as needed */
+        background-color: #333; /* Dark grey background for Cytoscape container */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Second Brain Graph Views</h1>
+    <form id="searchForm">
+      <input
+        type="text"
+        id="searchInput"
+        name="query"
+        placeholder="Search..."
+      />
+      <button type="submit">Search</button>
+    </form>
+    <div id="cy"></div>
+    <script>
+      let cy;
+      // Load initial data from the server
+      fetch("/data")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Received JSON data:", data);
+ 
+          cy = cytoscape({
+            container: document.getElementById("cy"),
+            elements: data.elements,
+            style: [
+              {
+                selector: "node",
+                style: {
+                  "text-valign": "center",
+                  "text-halign": "center",
+                  color: "#fff",
+                  "text-outline-color": "#b3aae2",
+                  "text-outline-width": 2,
+                  "font-size": "5px",
+                  label: "data(label)",
+                },
+              },
+              {
+                selector: "node[depth = 0]", // Top-level nodes (e.g., "School")
+                style: {
+                  label: "data(label)",
+                  "background-color": "#b3aae2",
+                  width: 80,
+                  height: 80,
+                  "font-size": "14px",
+                },
+              },
+              {
+                selector: "node[depth = 1]", // Subject nodes
+                style: {
+                  label: "data(label)",
+                  "background-color": "#7cafd1",
+                  width: 60,
+                  height: 60,
+                  "font-size": "12px",
+                },
+              },
+              {
+                selector: "node[depth = 2]", // Category nodes (Classwork, Homework, etc.)
+                style: {
+                  label: "data(label)",
+                  "background-color": "#bfd1e2",
+                  width: 50,
+                  height: 50,
+                  "font-size": "10px",
+                },
+              },
+              {
+                selector: "node[depth = 3]", // Individual notes
+                style: {
+                  label: "data(label)",
+                  "background-color": "#f44336",
+                  width: 40,
+                  height: 40,
+                  "font-size": "8px",
+                },
+              },
+              {
+                selector: "edge.link",
+                style: {
+                  width: 2,
+                  "line-color": "#aaa",
+                  "curve-style": "bezier",
+                  "target-arrow-shape": "triangle",
+                  "target-arrow-color": "#aaa",
+                  "arrow-scale": 1,
+                },
+              },
+              {
+                selector: "node:selected",
+                style: {
+                  "border-width": 2,
+                  "border-color": "#f00",
+                  "background-color": "#005a99",
+                },
+              },
+              {
+                selector: "node.note",
+                style: {
+                  shape: "round-rectangle",
+                },
+              },
+            ],
+            layout: {
+              name: "fcose", // Specify fcose layout
+              animate: true,
+              randomize: true,
+              nodeDimensionsIncludeLabels: true,
+              nodeRepulsion: 8000,
+              fixedNodeConstraint: [
+                { nodeId: "tag_1", position: { x: 0, y: 0 } },
+              ],
+            },
+          });
+     </script>
+  </body>
+</html>

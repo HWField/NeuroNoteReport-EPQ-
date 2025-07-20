@@ -1,0 +1,65 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Research Gen",
+      "type": "shell",
+      "command": "python3 ResearchGen.py",
+      "group": {
+      "kind": "build",
+      "isDefault": true
+      },
+      "presentation": {
+      "reveal": "always",
+      "focus": true // This sets keyboard focus to the terminal
+      },
+      "problemMatcher": []
+    },
+          {
+      "label": "Research Prefill",
+      "type": "shell",
+      "command": "python3 ResearchPrefill.py",
+      "group": {
+      "kind": "build",
+      "isDefault": true
+      },
+      "presentation": {
+      "reveal": "always",
+      "focus": false // This sets keyboard focus to the terminal
+      },
+      "problemMatcher": []
+    },
+
+
+
+
+        {
+      "label": "Prototype Gen",
+      "type": "shell",
+      "command": "python3 PrototypeGen.py",
+      "group": {
+      "kind": "build",
+      "isDefault": true
+      },
+      "presentation": {
+      "reveal": "always",
+      "focus": true // This sets keyboard focus to the terminal
+      },
+      "problemMatcher": []
+    },
+          {
+      "label": "Prototype Prefill",
+      "type": "shell",
+      "command": "python3 PrototypePrefill.py",
+      "group": {
+      "kind": "build",
+      "isDefault": true
+      },
+      "presentation": {
+      "reveal": "always",
+      "focus": false // This sets keyboard focus to the terminal
+      },
+      "problemMatcher": []
+    },
+  ]
+}
