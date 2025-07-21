@@ -1,0 +1,19 @@
+\section{Keyboard Shortcuts}
+\label{prototype:KeyboardShortcuts}
+Whilst using my software as my daily notes system I've began to find inefficiencies in how I interact with certain UI elements. While large buttons are excellent for new users (as it provides a logical way to select options) and mobile / tablet users who have limited input options other than touchscreen interactions.
+
+I therefore sought to bind the most used keys to keyboard shortcuts (whilst later researching ways to make options more visible / accessible within toolbars without cluttering menus for smaller displays). I aim to make the entire interface navigatable with the keyboard eventually which helps speed up software use by experienced users and has the added impact of making my system more accessible for visually impaired users who solely use screen readers and keyboard input.
+
+Starting with my notetaking screen I bound a common features of exiting and saving the note to the escape key, this felt intuitive to me (and hopefully other users) as it 'escapes' the current note, saving it and bringing the user back to the node view screen. At this point I also discovered that some browsers (such as safari) automatically 'capture' certain keystrokes for system settings (in this case exiting full screen view) so I had to unbind this default behaviour with the code:  e.preventDefault(); with e being the event (such as escape key down) returned by the 'watcher'. I also bound the tab key to a mode switch between drawing and text mode, once again having to block default (select next) features, this allows the user to be writing with a stylus then quickly switch to manipulating objects and typing
+
+I then turned my attention to the main node screen where I added some more keyboard shortcuts:
+\begin{itemize}
+	\item Pressing the "n" key will create a new note, if a tag is currently selected then the new note will have that tag as a parent
+	\item Pressing the "t" key will create a new tag, if a tag is currently selected then the new tag will have that tag as a parent
+	\item Pressing the "cmd / ctrl + a" key combination selects all nodes
+	\item Pressing "backspace / delete" with node(s) selected will delete the node(s)
+	\item Pressing "f" will find nodes (after a search term is entered), darkening all other nodes to reveal the ones wanted
+	\item Pressing the "r" key allows you to rename notes / tags
+	\item Pressing "s" will sort nodes. If nodes are selected they will randomly be arranged to help 'detangle' complex trees, if no nodes are selected then everything is put through the layout engine to create an aesthetic pleasing new layout
+	\item Pressing the "cmd / ctrl + s" key combination allows the user to save their current node arrangement for future use
+\end{itemize}

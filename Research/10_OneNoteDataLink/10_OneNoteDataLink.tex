@@ -1,0 +1,20 @@
+\section{OneNote Data Link}
+\label{research:OneNoteDataLink}
+I wanted to research how I could possibly use my projects organisational features to dynamically link with my pre-existing and school mandated OneNote notebooks (that can be shared between students and teachers), I was hoping to use my system to organise content much more efficiently and flexibly than natively supported whilst keeping the benefits of OneNote: mass market appeal and stability. 
+
+My first port of call was a quick google search to see what had already been done by others. This revealed some GitHub repositories which claimed to allow seamless connectivity between python (my backend server) and Microsoft OneNote documents hosted on the cloud (as mine and most organisations are), unfortunately these scripts didn't work as I had expected them to, whilst I could bring up a login page I couldn't authenticate myself and therefore couldn't read any data, this process was clearly more involved than I had first thought.
+
+Admittedly disheartened, I took a step back and looked into the official Microsoft documentation on the subject and in which I was surprised to find thoroughly documented tools that anyone could use to interface their code with OneNote, this seemed perfect.
+
+Here are some of the resources I found useful \cite{wibjornMicrosoftLearnBuild} :
+\begin{itemize}
+    \item https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-create-new-tenant
+    \item https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate
+    \item https://learn.microsoft.com/en-us/security/zero-trust/develop identity-supported-account-types\#accounts-in-any-organizational-account-and-personal-microsoft-accounts
+    \item https://learn.microsoft.com/en-us/graph/auth-v2-user 
+\end{itemize}
+
+Named graph API, this pipeline by Microsoft enables me to prompt a user to connect their Microsoft account, from their I can access their OneNote notebooks, searching through pages, files and parsing content into my backend. This perfectly integrates industry standard tools with my own software as I had envisioned.
+
+I soon built a prototype which proved this was both feasible and worked well, data could sync with very low latency (roughly 1.5 seconds from page edit on OneNote to updates on my software)
+
