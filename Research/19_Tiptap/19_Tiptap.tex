@@ -1,0 +1,17 @@
+\section{Tiptap}
+\label{research:Tiptap}
+\textbf{Source:} \cite{TiptapDocs}
+
+Creating notes in a fluid and efficient way is a fundamental goal for any note-taking app, and I wanted to make sure my app would meet these standards. Instead of diving straight into prototyping, as I had with other elements, I first took the time to explore existing applications to identify the features I wanted to include. From this, I found Notion to offer an almost perfect experience, providing users with various ‘modules’ they can combine to create both visually appealing and functional notes. I knew that whatever framework I chose for typed notes needed to be able to replicate this modular approach.
+
+Initially, I came across Quill.js, a text editor library that seemed like an ideal fit. It offered standard text formatting options (bold, italics, underline, etc.) and even more advanced features like the block-based structure I was looking for. However, despite Quill’s robustness as a tool, it lacked the level of community support that other solutions had. This became a dealbreaker for me, as I wanted to build a Notion-inspired modular note system, and without a strong support community, solving niche issues could be a challenge.
+
+I then discovered Yoopta Editor, a smaller and newer open-source system. It was actively maintained and had many of the underlying features I needed, but I was hesitant to rely fully on a newer system. The smaller community meant that I wasn’t sure how easily I could get help for more specific or complex problems. It was definitely a project to keep an eye on, but not the perfect fit for my current needs.
+
+After exploring a few other options, like Lexical (which was almost perfect but not free — understandable, given its feature set, but I prefer open-source projects to avoid limiting my ability to distribute and share my code), I finally landed on ProseMirror. It’s an established, open-source, and highly extensible rich-text editor with a large, growing community. ProseMirror comes with many built-in features, and there’s an even wider range of community-contributed extensions available. The only downside was its relatively complex API and documentation, which wasn’t as user-friendly as I’d hoped.
+
+Fortunately, I soon discovered TipTap, a project that builds on ProseMirror and offers a much friendlier developer interface. TipTap also bundles a lot of common plugins into a well-organized package. Although TipTap is maintained by a for-profit company, the core editor is open source and free to use. Their collaborative editing tools are behind a paywall, but I find their payment model fair, especially since I can still explore a wide array of features or pay for their reasonably priced licensing if I need those specific tools in the future.
+
+After reading through the documentation and exploring the various extensions and plugins, I was quickly able to create a prototype with many of the features I need.
+
+

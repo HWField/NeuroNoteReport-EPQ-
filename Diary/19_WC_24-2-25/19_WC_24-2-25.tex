@@ -4,9 +4,54 @@
 This week I continued development on my note taking artifact
 
 \subsection*{Achievements, Thoughts and Ideas:}
+I started the week by  recapping my notes on the various ways different people want to use note taking
 
-\subsection*{What did I learn?}
+By doing so I then distilled my findings into two divided categories, the first are those who want to be more creative with their notes by doodling, writing and marking up images and files in a way that best suits their personal preferences, the second are those who prefer to take more structured and formal notes with rich typed content and specialised equations. 
 
-\subsection*{What was challenging?}
+That second demographic is already fairly well catered for by options such as notion and obsidian (as I found through my existing user research) however very few platforms integrate these complex typed notes with the former users preferences, handwritten multimedia data recording due to the difficulties this can create in recording digital data. Most platforms use a complex system of text / content scanning to make their search functionality as strong as possible to compensate for poor data sorting systems that don't make 'connections' between different notes. Handwritten notes (unlike their typed out counterparts) cannot be as easily scanned by these searching systems thus making it highly challenging to find your own ideas. OneNote for example has no way of finding handwritten notes other than you remembering the exact folder they were in - not exactly a great system when you come back 5 years on to find that critical note from your past.
+
+By completely rethinking the way we store notes and using a rich tag based system, finding that same note is now as simple as visually looking around a graph, finding any other note that could be linked (no matter how weak that link is) and honing in making my tool great for discoverability. This isn't to say I wont be also integrating some 'AI' searching / sorting tools however, I can see a number of places this could be useful such as automating note tagging, after all who hasn't found themselves with a backlog of notes to sort out, with one click this can be automagically resolved. Searching functions are also incredibly useful, If a user did remember a phrase they used in a note they can jump their easily. If time permits I want to expand this to include a technology I researched called OCR (optical character recognition), by running a machine learning model on handwritten text it can be converted into a typed format with fairly decent accuracy, not that I need perfection, the user will never see the 'scan' result and alongside all the other data my software has it forms just one tool in its belt to find the notes a user is searching for. 
+
+This week I focused on building the typed document editor. I first spent some time researching frameworks I could use for tis. In my current prototypes I have used text boxes in Fabric to achieve this however I hoped to find a more feature rich alternative that would enable me to match the feature sets found In platforms like OneNote. Having tested a few options (Please see: \nameref{research:Tiptap}) I settled on Tiptap - a document editing framework perfect for this use case. It supports powerful native tools such as headings, lists, quotes etc and has a very flexible Api which allows me to build my own extensions to add features. Spending a couple of hours building out this editor I soon had a very flexible and user friendly interface for typing out my thoughts.
+
+Lastly this week I took the opportunity to watch through many of the lessons I had previously identified by the Pinia Mastery course, while the price had been out of my budget (student discount included), they were running a demo, all access, weekend which I took full advantage of. Learning a lot about the methods of structuring data I rewrote some of my backend functions to improve performance and data 'integrity'. 
+
+
+\subsection*{Power of Three:}
+\textbf{This week's Tasks laid out per day}
+
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}X  % First column expands
+  >{\centering\arraybackslash}p{1.5cm}  % Middle column has fixed width
+  >{\raggedright\arraybackslash}X  % Third column expands
+}
+\toprule
+\textbf{Goal} & \textbf{Achieved?} & \textbf{Notes} \\
+\midrule
+
+
+\rowcolor{gray!10}
+\multicolumn{3}{l}{\textbf{Monday}} \\
+Recap notes and identify core goals  & \ding{51} & \\
+Start building document editor & \ding{55} & Continual work in progress\\
+
+\rowcolor{gray!10}
+\multicolumn{3}{l}{\textbf{Tuesday}} \\
+Continue building Document Editor & \ding{51} & Work in progress \\
+
+\rowcolor{gray!10}
+\multicolumn{3}{l}{\textbf{Friday}} \\
+complete the February self review & \ding{51} & Please find here: \nameref{evaluation:FebSelfReview}\\
+
+\rowcolor{gray!10}
+\multicolumn{3}{l}{\textbf{Saturday/Sunday}} \\
+Watch through Pinia Mastery lessons & \ding{51} & \\
+
+
+\bottomrule
+\end{tabularx}
+
 
 \subsection*{Plans for next week:}
+Next week I want to continue adding features to my document editor and enable saving / loading so that my project has a demo able 
+MPV (minimum viable product)
