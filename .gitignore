@@ -16,6 +16,7 @@ Main.pdf
 **/*.fdb_latexmk
 **/*.blg
 **/*.bbl
+
 **/*.DS_Store
 ## Intermediate documents:
 *.dvi
@@ -28,7 +29,7 @@ Main.pdf
 
 ## Generated if empty string is given at "Please type another file name for output:"
 .pdf
-
+**/*.psd
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
 *.bbl-SAVE-ERROR

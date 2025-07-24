@@ -24,6 +24,13 @@
 \usepackage{wallpaper}
 \usepackage{etoolbox}
 
+
+\usepackage{titling}  
+
+
+
+
+
 \usepackage[table]{xcolor}
 
 \usepackage{tabularx}
@@ -42,7 +49,7 @@
 \newcommand{\myfancysetup}{
   \fancyhead[L]{Henry Field - EPQ Report}
   \fancyhead[R]{\rightmark}
-  \fancyfoot[L]{Candidate Number: \textbf{0000}\\Center Number: \textbf{0000}}
+  \fancyfoot[L]{Candidate Number: \textbf{1431}\\Center Number: \textbf{22147}}
   \fancyfoot[R]{Page \thepage}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0pt}
@@ -61,12 +68,28 @@
     urldate=long
 ]{biblatex}
 \addbibresource{References.bib}
+
+% \includeonly{Research/Research}
+
 \begin{document}
 
+% Set background image
+\ThisLRCornerWallPaper{1.0}{backgroundImage.png}
+
+\pretitle{\vspace{-3cm}\begin{center}\Huge\bfseries\color{gray!30!black}}
+\posttitle{\end{center}\vspace{2em}}
+\preauthor{\begin{center}\huge\color{gray!30!black}}
+\postauthor{\end{center}\vspace{1.5em}}
+% Removed predates and postdates since date is omitted
+
+% Title content
 \title{EPQ: NoteTaking\\[1ex]\large\textit{Exploring the Intersection of Cognitive Science and Computing}}
 \author{Henry Field}
-% \date{\today}
+\date{}
 \maketitle
+
+
+\thispagestyle{empty} % removes page number
 
 \tableofcontents
 \newpage
@@ -83,7 +106,7 @@
 \include{Diary/Diary}
 \include{Research/Research}
 \include{Prototype/Prototype}
-
+\include{SkillDevelopment/SkillDevelopment}
 \include{Evaluation/Evaluation}
 \include{VideoPresentation/VideoPresentation}
 \printbibliography[heading=bibintoc, title={Bibliography}]

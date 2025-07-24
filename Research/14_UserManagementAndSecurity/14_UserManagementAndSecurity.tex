@@ -1,0 +1,16 @@
+\section{User Management and Security}
+\label{research:UserManagementAndSecurity}
+\textbf{Source:} \cite{reddyBuildingSecureLogin2025}
+The management of a user data is one of the most important features of any successful note taking app. This data must be kept secure but also easy to access  by authorised users. This is one aspect of my artifact which benefited from copying and using preexisting and prewritten code to ensure I aligned with correct security best practices.
+
+With no experience In securing data between my Vue frontend and Flask backend I started with a google search which brought up this medium article \cite{reddyBuildingSecureLogin2025}. This excellent article taught me exactly how it was best to secure my data routes below I have made a quick write up of the basic steps.
+
+Within my backend systems I have a database containing the username and a hashed password (an encrypted password meaning even I (the administrator) can't see the password entered by the user during sign up but am able to check a login request password matches this hashed password). My backend server also has various different 'routes' such as domain.com/data and domain.com/notes which the frontend will call whilst loading to grab the relevant user data. 
+
+Naturally I cant just send every users data every time one of those routes was requested by the frontend as that would mean anyone could see everyone's data! Instead I will implement a login system.
+
+Whenever a user loads the frontend it will perform a check on the browser to see if it has a JWT token In its possession (more on this later), assuming not, the user is taken to a login page where they are prompted to enter their details. Once the user submits the login page the frontend sends the username/password over an encrypted tunnel to the backend. After checking the data is valid, the backend returns a JWT (think of this as a key) back to the users browser. Any time the user now needs to request data (such as that /data route) the JWT is bundled with the request and read by the backend to ensure only the correct users data is expired. 
+
+Whilst in a perfect world this process could now stop it is possible for malicious actors to compromise these 'keys', to prevent this happening each key is made invalid within a certain duration of time (minimising the impact a fraudulently obtained key could have). Once the key is invalid the user is prompted to log In again. The balance of log in frequency and security is a difficult problem to solve as on one hand it is important to not frustrate the user but on the other hand the user having their account and data compromised would certainly frustrate them! 
+
+Currently I 'trust' each user for a couple of hours before confirming which is fine for a prototype but before inviting users I will need to conduct further research on this. 
