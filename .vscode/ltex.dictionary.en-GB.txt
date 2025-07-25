@@ -1,0 +1,3 @@
+disactivating
+abilties
+MacTeX

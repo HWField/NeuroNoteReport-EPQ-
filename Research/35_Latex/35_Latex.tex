@@ -1,0 +1,66 @@
+\section{\LaTeX{}}
+\label{research:Latex}
+\textbf{Source:} \cite{DocumentationOverleafOnline} \cite{MacTeXTeXUsers}
+Eager to learn all about the \LaTeX{} typesetting system but with not a clue where to start I first had a quick search online
+
+I soon learnt that \LaTeX{} is a document preparation system for the \TeX{} typesetting system and is widely used for the communication and publication of scientific documents in many fields, including mathematics, computer science, engineering, physics, chemistry, and economics. It is also used for producing technical and scientific documentation. It fundamentally differs from a program such as Microsoft Word in that it is not a WYSIWYG (What You See Is What You Get) editor, but rather a markup language that allows users to define the structure and formatting of their documents using plain text commands. This means that users write their documents in a text editor, and then compile them into a formatted document, such as a PDF or HTML file. Whilst this can dissuade many users who are used to the simplicity of WYSIWYG editors, it does allow for much greater control over the formatting and layout of documents, and for me crucially, acts more like a programming language than a word processor. This is a huge benefit for me as I am used to writing code and prefer the control that it gives me over the final output.
+
+Whilst it has a learning curve to it with the commands, it would give me the power to automatically produce a comprehensive contents page (see the start of this document), link to other pages within the document, automatically decorate every page with a header, footer and location (please see around this page), easily mark sources when they are used such as: \cite{DocumentationOverleafOnline} and most importantly, produce a beautifully formatted document that I could be proud of.
+
+I also learnt that I can use my current code editor (Visual Studio Code) as my latex editor and compiler which is perfect for me as it is an environment I am already familiar with thanks to my EPQ artifact coding happening in the same software. 
+
+With all these advantages I was hugely excited to get started, and so I began researching how to set up \LaTeX{} on my computer. I found that the majority of online sources reference a web based platform called Overleaf. I had a look at their website and learnt it's a tool that aims to make \LaTeX more accessible to users more familiar with platforms like Word which seemed greater however required a constant internet connection to use and had many features locked behind a paywall. One foundation of my platform is that it is completely free and open to use so this dissuaded me, alongside a lack of offline support (which is useful when I am working on a train etc) I decided to go the slightly more complex route of setting up \LaTeX{} on my own computer.
+
+Browsing round forums I found a number of different distributions available to use on my MacBook, but the most popular one is called MacTeX \textbf{MacTeXTeXUsers} for macOS users. This distribution includes everything I needed to get started with \LaTeX{}, including the \TeX{} typesetting system, and a number of useful packages (like libraries in my code). I also found a fantastic extension for Visual Studio Code called LaTeX Workshop which provides a number of useful features for working with \LaTeX{}, including syntax highlighting, code completion, and a built-in PDF viewer. This extension is perfect for me as it allows me to work with \LaTeX{} completely offline of my own device.
+
+To learn more about the formatting and commands available to me, I predominately utilized the excellent documentation available on the Overleaf website \cite{DocumentationOverleafOnline} which provides a comprehensive guide to the \LaTeX{} typesetting system, including a number of useful examples and templates. I also found a number of other online resources, including YouTube tutorials and forums, that helped me to learn more the more niche functions and commands available to me.
+
+Here is an example of some of the formatting Abilities I have learnt to use in latex 
+\begin{center}
+    \Huge \textbf{Showcase of \LaTeX{} Abilities}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Mathematics:} Inline maths $E=mc^2$ and displayed equations:
+    \begin{equation}
+        \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+    \end{equation}
+    
+    \item \textbf{Tables:}
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Feature} & \textbf{Command} & \textbf{Example} \\
+            \hline
+            Bold Text & \verb|\textbf{}| & \textbf{Bold} \\
+            Italics & \verb|\textit{}| & \textit{Italics} \\
+            Underline & \verb|\underline{}| & \underline{Underline} \\
+            \hline
+        \end{tabular}
+        \caption{Basic Text Formatting in \LaTeX{}}
+    \end{table}
+    
+    \item \textbf{Lists:}
+    \begin{enumerate}
+        \item First item
+        \item Second item
+        \item Third item
+    \end{enumerate}
+    
+    \item \textbf{Figures:}
+    \begin{figure}[h!]
+        \centering
+        \fbox{\rule{0pt}{2in} \rule{2in}{0pt}}
+        \caption{Placeholder for an image}
+    \end{figure}
+    
+    \item \textbf{References and Citations:} See Section~\ref{research:Latex} and \cite{DocumentationOverleafOnline}.
+    
+    \item \textbf{Code Snippets:}
+    \begin{verbatim}
+def hello():
+    print("Hello, world!")
+    \end{verbatim}
+\end{itemize}
+and so much more!
