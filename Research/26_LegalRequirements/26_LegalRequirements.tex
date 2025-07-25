@@ -1,0 +1,195 @@
+\section{Legal Requirements}
+\label{research:LegalRequirements}
+\textbf{Source:} \cite{ICOOrganisations2025}
+As I am continuing to develop my note-taking application, I am beginning to realise that designing an intuitive interface and performant experience was only part of building responsible software. Since the project collects user email addresses and login information, and stores content locally and on my database, I need to understand what legal responsibilities I have as a developer based in the UK. While the app is academic in nature and not monetised, it still processes personal data, which means it falls under the scope of the UK General Data Protection Regulation (UK GDPR). That makes a clear Privacy Policy and Terms and Conditions not just best practice, but legally necessary.
+
+UK GDPR requires that any data controller (which includes solo developers and student projects such as my EPQ) informs users about how their personal data is collected, stored, and used. This includes even minimal data like email addresses or session tokens (the technology I use to enable 'remember me' functionality at login. Importantly, it also requires that users give informed consent — meaning they must be clearly told what data is collected, why it's collected, and how it will be handled. This doesn't necessarily mean a complex legal document, but it does mean being transparent and clear. For example, in my app, users must tick a checkbox confirming they've read and agreed to both the Privacy Policy and Terms before they can register.
+
+Beyond privacy, the Terms and Conditions define the rules and limitations of using the service. This is especially relevant in academic or personal projects that may not be maintained long-term. For instance, I include clauses making it clear that the app is part of a research project, uptime is not guaranteed, and the service may be withdrawn at any time. This helps set realistic expectations and protects me as the developer from liability if something breaks or access is interrupted. It also allows me to retain copyright over the software and its design, which is important even in academic work.
+
+Drafting these documents forced me to think through the edge cases of user interaction, like what happens if a user loses access to their content, or whether any of their input is stored remotely. In my case, documents are saved in my centralised database. This means I need to be explicit and clear about how and where that data lives. I learned that under PECR (Privacy and Electronic Communications Regulations), storing information on a user's device (even outside cookies) must be disclosed if it's not strictly necessary — though in my app's case, storing login tokens and offline content is considered essential, and doesn't require a consent banner.
+
+I mainly utilised the ICO website and resources \cite{ICOOrganisations2025} for my research in addition to a number of online services such as termly for templates to help me write my Privacy Policy and Terms and Conditions (please find below)
+
+
+Additionally, throughout my project I have used a variety of libraries to add new features, drawing from the talents of many incredible developers. Throughout this process I have been careful to only utilise works which carry a completely unrestrictive licence to use (not just as an academic project but also a paid product if I see huge success). These were often in the form of an MIT licence but others were also included. The open OSI (open source initiative) gave some useful advice on how to credit this code and for full transparency I ensured I attached links to the licencing term (and copyright holders) of every item I have used
+
+\subsection*{Acknowledgements:}
+Here is the document i produced to credit the libraries I have used in my project:
+
+This project uses the following open-source libraries whose authors have graciously made their work available for public use: 
+\subsubsection{Vue.js}
+Vue.js is a progressive JavaScript framework for building user interfaces. 
+	• Copyright: Copyright (c) 2018-present, Yuxi (Evan) You and Vue contributors 
+	• Licence: Mit -  https://github.com/vuejs/core/blob/main/LICENSE
+	• Reference:  https://vuejs.org/
+
+\subsubsection{Vue Pinia}
+Pinia is an state management library for Vue.js allowing this appication to store note data and user preferences webapp-wide 
+	• Copyright: Copyright (c) 2019-present Eduardo San Martin Morote 
+	• Licence: Mit -  https://github.com/vuejs/pinia/blob/v3/LICENSE
+	• Reference:  https://pinia.vuejs.org
+
+\subsubsection{Vue Router}
+Vue Router is the official router for Vue.js, enabling navigation between different views and components. 
+	• Copyright: Copyright (c) 2019-present Eduardo San Martin Morote 
+	• Licence: Mit -  https://github.com/vuejs/router/blob/main/LICENSE
+	• Reference:  https://router.vuejs.org
+
+\subsubsection{Shadcn UI}
+Shadcn UI is a component library for Vue.js, providing a set of flexible reusable UI components used system wide. 
+	• Copyright: Copyright (c) 2023 shadcn 
+	• Licence: Mit -  https://github.com/shadcn-ui/ui/blob/main/LICENSE.md
+	• Reference:  https://ui.shadcn.com
+
+\subsubsection{Tailwind CSS}
+Tailwind CSS is a utility-first CSS framework for easiily styling components and layouts. 
+	• Copyright: Copyright (c) Tailwind Labs, Inc. 
+	• Licence: Mit -  https://github.com/tailwindlabs/tailwindcss/blob/main/LICENSE
+	• Reference:  https://tailwindcss.com
+
+\subsubsection{Lucide Icon}
+Lucide Icon provides a set of open-source icons for use in web applications. 
+	• Copyright: Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2022 as part of Feather (MIT). All other copyright (c) for Lucide are held by Lucide Contributors 2022. 
+	• Licence: ISC -  https://lucide.dev/license
+	• Reference:  https://lucide.dev
+
+\subsubsection{Axios}
+Axios is a promise-based HTTP client for the browser, used for making API requests. 
+	• Copyright: Copyright (c) 2014-present Matt Zabriskie \& Collaborators 
+	• Licence: MIT -  https://github.com/axios/axios/blob/v1.x/LICENSE
+	• Reference:  https://axios-http.com/docs/intro
+
+\subsubsection{Cytoscape JS}
+Cytoscape.js is a graph theory library for visualisation and analysis of graphs and networks. 
+	• Copyright: Copyright (c) 2016-2024, The Cytoscape Consortium. 
+	• Licence: MIT -  https://github.com/cytoscape/cytoscape.js/blob/unstable/LICENSE
+	• Reference:  https://js.cytoscape.org
+
+\subsubsection{TipTap}
+TipTap is a rich-text editor framework for Vue.js, providing a flexible and extensible way to create text editing experiences. 
+	• Copyright: Copyright (c) 2025, Tiptap GmbH 
+	• Licence: MIT -  https://github.com/ueberdosis/tiptap/blob/develop/LICENSE.md
+	• Reference:  https://tiptap.dev
+
+\subsubsection{Fabric Js}
+Fabric.js is a powerful and simple JavaScript HTML5 canvas library, providing an interactive object model on top of the canvas element. 
+	• Copyright: Copyright (c) 2008-2015 Printio (Juriy Zaytsev, Maxim Chernyak) 
+	• Licence: MIT -  https://github.com/fabricjs/fabric.js/blob/master/LICENSE
+	• Reference:  https://fabricjs.com
+
+\subsubsection{Python Flask}
+Flask is a lightweight WSGI web application framework in Python, used for building web applications and APIs. 
+	• Copyright: Copyright 2010 Pallets 
+	• Licence: BSD-3 -  https://github.com/pallets/flask/blob/main/LICENSE.txt
+	• Reference:  https://flask.palletsprojects.com/en/stable/
+
+\subsubsection{SQL Alchemy}
+SQLAlchemy is a SQL toolkit and Object-Relational Mapping (ORM) system for Python, providing a full power and flexibility of SQL. 
+	• Copyright: Copyright 2005-2025 SQLAlchemy authors and contributors 
+	• Licence: MIT -  https://github.com/sqlalchemy/sqlalchemy/blob/main/LICENSE
+	• Reference:  https://www.sqlalchemy.org
+
+\subsubsection{PY JWt}
+PyJWT is a Python library for encoding and decoding JSON Web Tokens (JWT), used for secure data exchange between parties. 
+	• Copyright: Copyright (c) 2015-2022 José Padilla 
+	• Licence: MIT -  https://github.com/jpadilla/pyjwt/blob/master/LICENSE
+	• Reference:  https://pyjwt.readthedocs.io/en/stable/
+
+
+\subsection*{Terms and Conditions:}
+Here is the document I produced to outline the terms and conditions of my project:
+
+Welcome to [second brain - change after decided naming next week] ("the App"), provided by Henry Field ("Company," "we," "us," or "our"). By creating an account, accessing, or using the App, you agree to these Terms and Conditions ("Terms"). If you do not agree, please do not use the App. 
+0. Academic Nature of the App 
+0.1. This App is part of an academic project and is provided as-is for experimental or educational use only. 
+0.2. We make no guarantees of availability, reliability, or long-term support of either the application or data stored. 
+0.3. The App may be shut down or altered at any time without notice. 
+1. Account Registration and Security 
+1.1. To use the App, you must create an account and provide accurate, up-to-date information. 
+1.2. You are responsible for maintaining the confidentiality of your password and account credentials. 
+1.3. All passwords are encrypted for security; however, you acknowledge that no system is completely secure. 
+2. User-Generated Content 
+2.1. You retain ownership of any notes, text, images, or other content ("User Content") you create within the App. 
+2.2. User Content is not encrypted. You acknowledge and accept any risks associated with storing unencrypted data. 
+2.3. You grant us a non-exclusive, worldwide, royalty-free license to use, store, display, and distribute User Content as necessary to operate the App. 
+3. Intellectual Property 
+3.1. All software, designs, logos, trademarks, and other elements of the App are owned by or licensed to the Company. 
+3.2. You may not copy, modify, distribute, or reverse-engineer any part of the App without our express permission. 
+4. Data Privacy \& Security 
+4.1. While passwords are encrypted, User Content is stored in plaintext and is not encrypted. By using the App, you accept this limitation. 
+4.2. We take reasonable security measures to protect your data but cannot guarantee complete security. 
+4.3. Our use of personal data is governed by our Privacy Policy. 
+5. Prohibited Conduct 
+5.1. You agree not to:
+	• Use the App for any illegal or unauthorised purposes. 
+	• Upload content that infringes on third-party rights. 
+	• Attempt to hack, disrupt, or misuse the App. 
+6. Termination
+6.1. We may suspend or terminate your account if you violate these Terms. 
+6.2. You may delete your account at any time, but some data may be retained for legal or operational purposes. 
+7. Disclaimers \& Liability Limits 
+7.1. The App is provided "as is" without warranties of any kind. 
+7.2. We are not responsible for any loss, damage, or unauthorised access to your data. 
+8. Changes to These Terms 
+8.1. We may update these Terms from time to time. Continued use of the App after updates means you accept the new Terms. 
+9. Contact Us
+If you have any questions, please contact us at hf165122@hrsfc.ac.uk
+
+\subsection*{Privacy Policy:}
+Here is the document I produced to outline the privacy policy of my project:
+Welcome to [second brain - change after decided naming next week] (“the App”) . We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and store your information when you use the App. The App is provided by Henry Field (“Company,” “we,” “us,” or “our”) as part of an academic project, not for commercial purposes. We comply with the UK General Data Protection Regulation (“UK GDPR”) and the Data Protection Act 2018. 
+1. Who We Are
+Henry Field is the data controller for the purposes of UK data protection law. If you have any questions, please contact us at: hf165122@hrsfc.ac.uk
+2. What Data We Collect 
+When you register or use the App, we collect: 
+	• Your email address
+	• A username of your choice
+We do not collect any sensitive personal data, such as health information or financial data. 
+3. How We Use Your Data 
+We use your information for the following purposes: 
+	• To create and manage your account 
+	• To provide you access to the App and its features 
+	• For academic research and analysis (in anonymised or aggregated form) 
+	• To communicate with you if necessary about service-related issues 
+We do not use your data for marketing purposes or targeted advertising. 
+4. Legal Basis for Processing 
+Under the UK GDPR, our lawful basis for processing your personal data is: 
+	• Consent — when you create an account, you consent to us using your information as described. 
+	• Legitimate interests — to operate and improve the App for academic and research purposes. 
+5. How We Store and Protect Your Data 
+	• Your data is stored securely on hardware owned an operated by the company in the UK. 
+	• Passwords are encrypted.
+	• We take reasonable steps to protect your information but no system is completely secure. 
+6. Data Sharing
+We do not sell, rent, or share your personal data with third parties. 
+We may utilise anonymised, aggregated data for academic research purposes only. 
+We may disclose personal data if required to do so by law. 
+7. Data Retention
+We will retain your personal information for as long as necessary for the academic project. 
+Once the project ends or your account is deleted, your data will either be anonymised or securely deleted within 30 days. 
+8. Your Rights Under UK GDPR 
+You have the following rights: 
+	• The right to access your personal data 
+	• Right to correct inaccurate or incomplete data 
+	• Right to request deletion of your data (“right to be forgotten”) 
+	• The right to restrict processing of your data 
+	• Right to withdraw consent at any time 
+To exercise any of these rights, please contact us at hf165122@hrsfc.ac.uk
+If you are unhappy with how we handle your data, you can also complain to the UK Information Commissioner’s Office (ICO):  https://ico.org.uk/concerns/
+9. Use of Local Storage and Session Storage 
+We use your device’s local storage and session storage to enhance your experience within the App. Specifically, we use storage for the following purposes: 
+Session Storage:
+	• We temporarily store authentication tokens during your active session to enable secure login and access to your account features. 
+	• To maintain your session state and preferences. 
+Local Storage:
+	• We store your documents locally on your device to allow for offline access to your notes and content when you are not connected to the internet. 
+	• We store user preferences and settings to enhance your experience within the App. 
+	• We store authentication tokens to allow for "remember me" functionality, enabling you to stay logged in across browsing sessions. 
+	• We do not use local storage to track your activity or collect personal data. 
+10. Changes to This Privacy Policy 
+We may update this Privacy Policy occasionally. If significant changes are made, we will notify users via the App or by email. 
+11. Contact us
+If you have any questions about this Privacy Policy or how your data is handled, please contact: hf165122@hrsfc.ac.uk
+
+
