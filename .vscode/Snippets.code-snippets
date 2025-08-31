@@ -1,26 +1,41 @@
 {
-	// Place your EPQReport workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
-	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
-	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
-	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
-	// Placeholders with the same ids are connected.
-	// Example:
-	// "Print to console": {
-	// 	"scope": "javascript,typescript",
-	// 	"prefix": "log",
-	// 	"body": [
-	// 		"console.log('$1');",
-	// 		"$2"
-	// 	],
-	// 	"description": "Log output to console"
-	// }
-	"Insert minted code block": {
-		"scope": "latex",
-		"prefix": "code",
-		"body": [
-			"\\inputminted[linenos, tabsize=1, breaklines]{${1:language}}{${2:filel}}"
-		],
-		"description": "Insert a minted code block with line numbers"
-	}
+  // Place your EPQReport workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "Insert minted code block": {
+    "scope": "latex",
+    "prefix": "code",
+    "body": [
+      "\\inputminted[linenos, tabsize=1, breaklines]{${1:language}}{${2:filel}}"
+    ],
+    "description": "Insert a minted code block with line numbers"
+  },
+  "Insert Bold Text": {
+    "scope": "latex",
+    "prefix": "bold",
+    "body": ["\\textbf{${1:text}}"],
+    "description": "Insert bold text"
+  },
+
+  "source": {
+    "scope": "latex",
+    "prefix": "source",
+    "body": [
+      "${1:BibNum} & ${2:Title} & ${3:Author} & ${4:Type} & ${5:Currency} & ${6:Authority} & ${7:Purpose} & ${8:Rating}/10 & ${9:Notes}\\\\\\\\"
+    ],
+    "description": "Insert a table row for source evaluation with tab stops"
+  }
 }
