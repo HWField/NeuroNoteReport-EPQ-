@@ -10,3 +10,5 @@ NeuroNote
 TickTick
 Focusrite
 Shure
+SocketIO
+Tiptap

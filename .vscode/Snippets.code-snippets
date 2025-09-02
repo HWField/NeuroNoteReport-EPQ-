@@ -34,7 +34,7 @@
     "scope": "latex",
     "prefix": "source",
     "body": [
-      "${1:BibNum} & ${2:Title} & ${3:Author} & ${4:Type} & ${5:Currency} & ${6:Authority} & ${7:Purpose} & ${8:Rating}/10 & ${9:Notes}\\\\\\\\"
+      "${1:BibNum} & ${2:Title} & ${3:Author} & ${4:DateAccessed} & ${5:TypeCurrency} & ${6:Authority} & ${7:Purpose} & ${8:Rating}/10 & ${9:Notes}\\\\\\\\"
     ],
     "description": "Insert a table row for source evaluation with tab stops"
   }
