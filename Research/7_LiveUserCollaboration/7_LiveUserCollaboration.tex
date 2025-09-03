@@ -2,14 +2,17 @@
 \label{research:LiveUserCollaboration}
 
 A core foundation of my project is enabling seamless sharing of notes between multiple users. Achieving this requires two key backend capabilities:
-1.	The ability to store data reliably.
-2.	The ability to transmit up-to-date information to users in real time.
-
+\begin{enumerate}
+    \item The ability to store data reliably.
+    \item The ability to transmit up-to-date information to users in real time.
+\end{enumerate}
 While I had already researched data storage earlier, real-time communication was an area I hadn't yet explored. To better understand it, I began with some initial research.
 
 A quick search introduced me to two common approaches to client-server communication:
-•	Polling via POST requests: where the client periodically asks the server for updates.
-•	Persistent connections: where the server pushes updates to the client in real time via a direct connection.
+\begin{itemize}
+    \item Polling via POST requests: where the client periodically asks the server for updates.
+    \item Persistent connections: where the server pushes updates to the client in real time via a direct connection.
+\end{itemize}
 
 The polling method initially seemed more straightforward to implement and relied on Python concepts I was already familiar with, so I began by experimenting with that.
 

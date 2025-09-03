@@ -1,12 +1,12 @@
 \section{WC 2/12/24}
 
 \subsection*{Overview:}
-Having researched  the style of notes I aim to create and maintaining my cycle of alternating theory and technical weeks, I spent this week exploring technical methods to achieve my goal of a cloud-based, always-available, easily collaborative, shareable, and, most importantly, flexible note-taking system.
+Having researched the style of notes I aim to create and maintaining my cycle of alternating theory and technical weeks, I spent this week exploring technical methods to achieve my goal of a cloud-based, always-available, easily collaborative, shareable, and, most importantly, flexible notetaking system.
 
 \subsection*{Achievements, Thoughts and Ideas:}
-I began the week with a new perspective that slightly diverged from my previous ideas about how my note-taking system should function. Using OneNote as a note-taking tool with students and teachers has become an industry-standard practice. While I believe I could create a potentially more functional tool, relying solely on that would be foolish. Therefore, I plan to research ways to integrate my note organization system, built on an extensive system of tags, into my existing OneNote files. More details are outlined here: \nameref{research:OneNoteDataLink} 
+I began the week with a new perspective that slightly diverged from my previous ideas about how my notetaking system should function. Using OneNote as a notetaking tool with students and teachers has become an industry-standard practice. While I believe I could create a potentially more functional tool, relying solely on that would be foolish. Therefore, I plan to research ways to integrate my note organization system, built on an extensive system of tags, into my existing OneNote files. More details are outlined here: \nameref{research:OneNoteDataLink}.
 
-I realised partially through my exploration into the technical details that using this OneNote API integration would require permissions from the school IT department 
+I realised partially through my exploration into the technical details that using this OneNote API integration would require permissions from the school IT department in order to systematically and automatically access my notes. 
 
 \begin{figure}[H]
 \centering
@@ -15,7 +15,7 @@ I realised partially through my exploration into the technical details that usin
 \label{diary:emailToIT}
 \end{figure}
 
-Whilst I awaited a reply I began to explore alternative ways of storing my note information, I had a look into accessing various other platforms such as Trillium, Evernote and a Google Docs wrapper. Whilst all of these tools are okay note taking resources (missing many features even OneNote has not to mention the features I believe should be considered 'basic'), they lack the tight integration that the OneNote backend tools could give me. I made the decision that (at least for now) I would focus on using OneNote to store my data 
+Whilst I awaited a reply I began to explore alternative ways of storing my note information, I had a look into accessing various other platforms such as Trillium, Evernote and a Google Docs wrapper. Whilst all of these tools are okay notetaking resources (missing many features even OneNote has, not to mention the features I believe should be considered 'basic'), they lack the tight integration that the OneNote data link could give me. I made the decision that (at least for now) I would focus on using OneNote to store my data 
 
 I later received a response from the school IT department:
 
@@ -26,7 +26,9 @@ I later received a response from the school IT department:
 \caption{Reply from the school IT department}
 \end{figure}
 
-It was unfortunately not the news I was hoping for. Whilst my technical implementation was entirely feasible (and functional) the school would be unable to give me the permissions needed to use the integration on my student notes. Not to be deterred I want to continue building this integration as I believe it will be an incredible tool for many who are stuck using OneNote and dislike the primitive organisation features it contains. Being unable to use it in school has however given me some more context as to difficulties users could find with the tool within other corporate environments, I want my tools to be accessible for all and so building an entirely separate system (but with the ability to integrate common tools as required) will ensure I can meet this goal. As such my prior research wasn't entirely wasted - I just need to be mindful to keep external syncing in mind whilst building my artifact
+It was unfortunately not the news I was hoping for. Whilst my technical implementation was  feasible (and functional on my personal accounts) the school would be unable to give me the permissions needed to use the integration on my school notes. 
+
+Not to be deterred I want to continue building this integration as I believe it will be an incredible tool for many who are stuck using OneNote and dislike the primitive organisation features it contains. Being unable to use it in school has however given me some more context as to difficulties users could find with the tool within other corporate environments. I want my tools to be accessible for all and so building an entirely separate system (but with the ability to integrate common tools as required) will ensure I can meet this goal. As such my prior research wasn't entirely wasted - I just need to be mindful to keep external syncing in mind whilst building my artifact.
 
 I revisited my past research to find Fabric JS - a popular web tool that would allow me to create my own online canvas to store my notes. After reading through the relevant documentation I produced another prototype: \nameref{prototype:WritingTool}
 
@@ -86,8 +88,8 @@ Write up the past week into diary & \ding{51} & \\
 \end{tabularx}
 
 \subsection*{What did I learn?}
-This week taught me a huge amount about interfacing my own creations with those of others to maximise collaboration and openness, although I didn't complete much more research this week was highly productive as it has set my on my path forward
+This week taught me a huge amount about interfacing my own creations with those of others to maximise collaboration and openness, although I didn't complete much more research, this week was highly productive as it has set me on my path forward in a far more informed way.
 
 
 \subsection*{Plans for next week:} 
-Next week I want to clean up my messy prototype code base: segmenting huge logic code into functions and implementing some bug fixes / obvious feature additions
+Next week I want to clean up my messy prototype code base: segmenting huge code files into clean functions and implementing some bug fixes / obvious feature additions.
